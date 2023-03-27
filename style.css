@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Kreon:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen:wght@400&display=swap");
+:root{
+  --primary-font:'Kreon';
+  --title-font:'Koulen';
+  --bg-color:#EDFDFB;
+  --pink:#F8E9F2;
+  --hover-color:#1CAE19;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+nav{
+  align-items: center;
+  justify-content:space-around;
+  display: flex;
+  background-color: #F8E9F2;
+  min-height: 6rem;
+  border: 1px solid black;
+  position: sticky;
+
+}
+a:link, a:visited{
+  text-decoration: none;
+  color: var(--light-color);
+}
+.logo{
+  font-size: 3rem;
+  font-family: var(--title-font);
+}
+.logo img {
+  margin-right: auto;
+  height: 40px;
+}
+
+.logo span {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-left: 1rem;
+}
+.nav-links {
+    display: flex;
+    justify-content:space-around;
+    font-family: var(--primary-font);
+    
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  margin-right: 2rem;
+  
+}
+.scr{
+  background-image: url(/resources/pngwing-1@2x-1500h.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 80vh;
+}
+.scr2{
+
+  background-image: url(/resources/pizza-png44087-2@2x-1500w.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+  position: relative;
+  
+}
+.scr2 p{
+  font-family: var(--primary-font);
+  font-size: 2rem;
+  padding-top: 7rem;
+  text-align: center;
+}
+
+.scr2 .card{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15rem;
+}
+/*.scr3{
+  display: flex;
+  background-image: url(/resources/pngwing-2@2x-500h.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}*/
+.time{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.time li{
+  list-style: none;
+  font-size: 1.5rem;
+}
+.cont{
+  font-family: var(--primary-font);
+  display: flex;
+  margin: 10vh;
+}
+.cont .int1{
+  text-align: center;
+}
+.cont .int1 h2{
+  font-size: 4rem;
+}
+.cont .int1 ul{
+  font-size: 1rem;
+}
+.cont .int1 h3{
+  font-size: 2rem;
+}
+.cont .int1 button{
+    appearance: none;
+    background-color: transparent;
+    border: 0.125em solid #1A1A1A;
+    border-radius: 0.9375em;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-family:var(--primary-font) ;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 1vh;
+    min-height: 3.75em;
+    min-width: 0;
+    outline: none;
+    padding: 1em 2.3em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+   }
+   
+   button:disabled {
+    pointer-events: none;
+   }
+   
+   button:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+   }
+   
+   button:active {
+    box-shadow: none;
+    transform: translateY(0);
+   }
+.cont1{
+  display: flex;
+}
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+  background-color: #000000;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .cont{
+    margin: 5vh;
+    flex-direction:column;
+  }
+  .nav-links {
+    position: fixed;
+    right: 0px;
+    height: 92vh;
+    top: 1px;
+    background-color: var(--pink);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border: 1px solid black;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+.burger-active .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger-active .line2 {
+  opacity: 0;
+}
+
+.burger-active .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Animation */
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+
